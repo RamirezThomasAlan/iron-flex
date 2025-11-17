@@ -1,11 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iron Flex</title>
+    <title>Iron Flex - Tu Gimnasio de Confianza</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>Iron Flex</h1>
+    <!-- Pantalla de carga -->
+    <div id="loading-screen">
+        <div class="loading-text">Cargando (Iron Flex), por favor espere...</div>
+        <div class="loading-animation"></div>
+    </div>
+
+    <!-- Tooltip global -->
+    <div class="tooltip"></div>
+
+    <!-- Header y navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="logo" onclick="scrollToSection('hero')">
+                IF
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio" onclick="scrollToSection('hero')">Inicio</a></li>
+                <li><a href="#categorias" onclick="scrollToSection('categories-section')">Categorias</a></li>
+                <li><a href="#testimonios" onclick="scrollToSection('testimonials-section')">Testimonios</a></li>
+            </ul>
+            <button class="theme-toggle" id="theme-toggle">🌙</button>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Iron Flex</h1>
+            <p>Transforma tu cuerpo, fortalece tu mente. El mejor gimnasio con equipos de última generación y entrenadores profesionales.</p>
+            <a href="#categorias" class="cta-button" onclick="scrollToSection('categories-section')">Descubre nuestros planes</a>
+        </div>
+    </section>
+
+    <!-- Categorías -->
+    <section id="categories-section" class="fade-in">
+        <h2 class="section-title">Nuestras Categorías</h2>
+        <div class="categories">
+            <!-- Las categorías se cargarán dinámicamente con JavaScript -->
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section id="products-section" class="fade-in" style="display: none;">
+        <h2 class="section-title" id="products-title">Productos</h2>
+        <div class="products-grid">
+            <!-- Los productos se cargarán dinámicamente con JavaScript -->
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <button class="btn btn-primary" onclick="goBackToCategories()">Volver a Categorías</button>
+        </div>
+    </section>
+
+    <!-- Planes -->
+    <section id="plans-section" class="fade-in">
+        <h2 class="section-title">Nuestros Planes</h2>
+        <div class="plans">
+            <div class="plan-card">
+                <h3>Básico</h3>
+                <div class="plan-price">$29/mes</div>
+                <ul class="plan-features">
+                    <li>Acceso a zona de cardio</li>
+                    <li>Acceso a zona de pesas</li>
+                    <li>Vestuario y duchas</li>
+                    <li>Asesoramiento básico</li>
+                </ul>
+                <button class="btn btn-primary" onclick="subscribeToPlan('Básico')">Suscribirse</button>
+            </div>
+            <div class="plan-card popular">
+                <div class="popular-badge">Popular</div>
+                <h3>Pro</h3>
+                <div class="plan-price">$49/mes</div>
+                <ul class="plan-features">
+                    <li>Todos los beneficios del plan Básico</li>
+                    <li>Acceso ilimitado a clases grupales</li>
+                    <li>Plan de entrenamiento personalizado</li>
+                    <li>Seguimiento nutricional básico</li>
+                    <li>Acceso a área de spa</li>
+                </ul>
+                <button class="btn btn-primary" onclick="subscribeToPlan('Pro')">Suscribirse</button>
+            </div>
+            <div class="plan-card">
+                <h3>Premium</h3>
+                <div class="plan-price">$79/mes</div>
+                <ul class="plan-features">
+                    <li>Todos los beneficios del plan Pro</li>
+                    <li>Entrenador personal 2 veces por semana</li>
+                    <li>Seguimiento nutricional avanzado</li>
+                    <li>Acceso prioritario a todas las instalaciones</li>
+                    <li>Invitado gratis 1 vez al mes</li>
+                    <li>Descuentos en productos</li>
+                </ul>
+                <button class="btn btn-primary" onclick="subscribeToPlan('Premium')">Suscribirse</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonials-section" class="fade-in">
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <div class="testimonials-slider">
+            <div class="testimonials-container" id="testimonials-container">
+                <!-- Los testimonios se cargarán dinámicamente con JavaScript -->
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn" id="prev-testimonial">❮</button>
+                <button class="slider-btn" id="next-testimonial">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="gallery-section" class="fade-in">
+        <h2 class="section-title">Nuestras Instalaciones</h2>
+        <div class="gallery" id="gallery">
+            <!-- Las imágenes de la galería se cargarán dinámicamente con JavaScript -->
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact-section" class="fade-in">
+        <h2 class="section-title">Contáctanos</h2>
+        <div class="contact-form">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" class="form-control" required></textarea>
+            </div>
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="subscribe">
+                <label for="subscribe">Suscribirme a promociones y novedades</label>
+            </div>
+            <button class="btn btn-primary" onclick="submitContactForm()">Enviar Mensaje</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#" class="social-link">f</a> <!-- Facebook -->
+            <a href="#" class="social-link">in</a> <!-- LinkedIn -->
+            <a href="#" class="social-link">r</a> <!-- Reddit -->
+            <a href="https://www.fiverr.com/tu_usuario" class="social-link">F</a> <!-- Fiverr -->
+            <a href="#" class="social-link">gh</a> <!-- GitHub -->
+        </div>
+        <div class="disclaimer">
+            <p>Proyecto ficticio desarrollado por Thomas Ramírez - Desarrollador Web con más de 2 años de experiencia, especializado en Landing Pages Profesionales.</p>
+            <p>Esta página fue creada con fines demostrativos, utilizando HTML, CSS y JavaScript puro. No pertenece a ninguna empresa real.</p>
+            <p>Si querés una landing igual de profesional, encargá la tuya por solo $10 USD en mi perfil de <a href="https://www.fiverr.com/tu_usuario">fiverr</a>.</p>
+        </div>
+    </footer>
+
+    <!-- Botón WhatsApp flotante -->
+    <div class="whatsapp-float" id="whatsapp-float">
+        <div class="whatsapp-icon">💬</div>
+    </div>
+
+    <!-- Modal de producto -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('product-modal')">×</button>
+            <h3 class="modal-title" id="product-modal-title">Producto</h3>
+            <div id="product-modal-content">
+                <!-- Contenido del producto se cargará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de carrito -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('cart-modal')">×</button>
+            <h3 class="modal-title">Tu Carrito</h3>
+            <div class="cart-items" id="cart-items">
+                <!-- Los elementos del carrito se cargarán dinámicamente -->
+            </div>
+            <div class="cart-total" id="cart-total">Total: $0</div>
+            <button class="btn btn-primary" style="width: 100%;" onclick="checkout()">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación -->
+    <div class="modal" id="confirmation-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('confirmation-modal')">×</button>
+            <h3 class="modal-title" id="confirmation-title">Confirmación</h3>
+            <p id="confirmation-message">Mensaje de confirmación</p>
+            <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;" onclick="closeModal('confirmation-modal')">Aceptar</button>
+        </div>
+    </div>
+
+    <!-- Modal de galería -->
+    <div class="modal" id="gallery-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('gallery-modal')">×</button>
+            <div id="gallery-modal-content">
+                <!-- Contenido de la galería se cargará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div class="toast" id="toast"></div>
+
+    <script src="./js/script.js"></script>
 </body>
 </html>
