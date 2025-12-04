@@ -12,7 +12,6 @@ Incluye **planes detallados**, **calculadora de IMC**, **testimonios dinámicos*
 Además, incorpora una **pantalla de carga**, **modo oscuro**, sistema de tooltips y navegación adaptada tanto a desktop como mobile.
 
 ## 📸 Captura de Pantalla
-*(Colocá aquí tu imagen preview.png)*  
 ![Captura del sitio](preview.png)
 
 ## 💡 Características principales
