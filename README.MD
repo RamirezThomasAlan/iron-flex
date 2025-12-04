@@ -61,10 +61,7 @@ Proyecto desarrollado por **Thomas Ramírez**, Desarrollador Web Frontend expert
 Creado como parte de su portafolio profesional para mostrar habilidades en diseño, interacción y optimización web.
 
 ## 🌐 Redes sociales
-[LinkedIn](https://www.linkedin.com/in/thomas-alan-ramirez/) |  
-[Fiverr](https://es.fiverr.com/aramirezthomas?public_mode=true) |  
-[Facebook](https://www.facebook.com/profile.php?id=61575025664166) |  
-[Reddit](https://www.reddit.com/user/Late-Put-9295/)
+[LinkedIn](https://www.linkedin.com/in/thomas-alan-ramirez/) |  [Fiverr](https://es.fiverr.com/aramirezthomas?public_mode=true) |  [Facebook](https://www.facebook.com/profile.php?id=61575025664166) |  [Reddit](https://www.reddit.com/user/Late-Put-9295/)
 
 ## 🤝 ¿Querés una landing así para tu negocio?
 Podés encargar una landing profesional **por solo $10 USD** desde mi perfil de Fiverr:
