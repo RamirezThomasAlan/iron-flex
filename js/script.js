@@ -1,165 +1,5 @@
 // Datos de la aplicación
 const appData = {
-    categories: [
-        {
-            id: 1,
-            name: "Ropa Deportiva",
-            description: "Ropa cómoda y funcional para tus entrenamientos",
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlJvcGEgRGVwb3J0aXZhIChJbWFnZW4gcmVhbCk8L3RleHQ+PC9zdmc+"
-        },
-        {
-            id: 2,
-            name: "Suplementos",
-            description: "Complementa tu nutrición para mejores resultados",
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlN1cGxlbWVudG9zIChJbWFnZW4gcmVhbCk8L3RleHQ+PC9zdmc+"
-        },
-        {
-            id: 3,
-            name: "Accesorios",
-            description: "Todo lo que necesitas para complementar tu entrenamiento",
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkFjY2Vzb3Jpb3MgKEltYWdlbiByZWFsKTwvdGV4dD48L3N2Zz4="
-        }
-    ],
-    products: [
-        // Productos para Ropa Deportiva
-        {
-            id: 1,
-            categoryId: 1,
-            name: "Camiseta Deportiva",
-            description: "Camiseta transpirable para entrenamientos intensos",
-            price: 25.99,
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkNhbWlzZXRhPC90ZXh0Pjwvc3ZnPg==",
-            sizes: ["S", "M", "L", "XL"]
-        },
-        {
-            id: 2,
-            categoryId: 1,
-            name: "Pantalón Deportivo",
-            description: "Pantalón cómodo y flexible para cualquier actividad",
-            price: 35.99,
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlBhbnRhbMOzbjwvdGV4dD48L3N2Zz4=",
-            sizes: ["S", "M", "L", "XL"]
-        },
-        {
-            id: 3,
-            categoryId: 1,
-            name: "Zapatillas Deportivas",
-            description: "Calzado con amortiguación para proteger tus articulaciones",
-            price: 79.99,
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlphcGF0aWxsYXM8L3RleHQ+PC9zdmc+",
-            sizes: ["38", "39", "40", "41", "42", "43", "44"]
-        },
-        {
-            id: 4,
-            categoryId: 1,
-            name: "Sudadera con Capucha",
-            description: "Abrigo perfecto para entrenar en climas fríos",
-            price: 45.99,
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlN1ZGFkZXJhPC90ZXh0Pjwvc3ZnPg==",
-            sizes: ["S", "M", "L", "XL"]
-        },
-        {
-            id: 5,
-            categoryId: 1,
-            name: "Shorts Deportivos",
-            description: "Shorts ligeros y transpirables para máxima movilidad",
-            price: 22.99,
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlNob3J0czwvdGV4dD48L3N2Zz4=",
-            sizes: ["S", "M", "L", "XL"]
-        },
-        // Productos para Suplementos
-        {
-            id: 6,
-            categoryId: 2,
-            name: "Proteína en Polvo",
-            description: "Proteína de suero de leche para recuperación muscular",
-            price: 39.99,
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlByb3Rlw61uYTwvdGV4dD48L3N2Zz4=",
-            sizes: ["1kg", "2kg", "5kg"]
-        },
-        {
-            id: 7,
-            categoryId: 2,
-            name: "Creatina Monohidrato",
-            description: "Suplemento para aumentar fuerza y masa muscular",
-            price: 24.99,
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkNyZWF0aW5hPC90ZXh0Pjwvc3ZnPg==",
-            sizes: ["250g", "500g", "1kg"]
-        },
-        {
-            id: 8,
-            categoryId: 2,
-            name: "BCAA en Tabletas",
-            description: "Aminoácidos de cadena ramificada para reducir fatiga",
-            price: 19.99,
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkJDQUE8L3RleHQ+PC9zdmc+",
-            sizes: ["60 tabletas", "120 tabletas", "240 tabletas"]
-        },
-        {
-            id: 9,
-            categoryId: 2,
-            name: "Pre-entreno",
-            description: "Mezcla energética para maximizar tu rendimiento",
-            price: 29.99,
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlByZS1lbnRyZW5vPC90ZXh0Pjwvc3ZnPg==",
-            sizes: ["300g", "600g"]
-        },
-        {
-            id: 10,
-            categoryId: 2,
-            name: "Multivitamínico",
-            description: "Complejo vitamínico para deportistas",
-            price: 15.99,
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlZpdGFtaW5hczwvdGV4dD48L3N2Zz4=",
-            sizes: ["30 cápsulas", "60 cápsulas", "90 cápsulas"]
-        },
-        // Productos para Accesorios
-        {
-            id: 11,
-            categoryId: 3,
-            name: "Botella Deportiva",
-            description: "Botella de 1L con marcador de consumo",
-            price: 12.99,
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkJvdGVsbGE8L3RleHQ+PC9zdmc+",
-            sizes: ["750ml", "1L", "1.5L"]
-        },
-        {
-            id: 12,
-            categoryId: 3,
-            name: "Toalla Deportiva",
-            description: "Toalla absorbente y rápida secado",
-            price: 14.99,
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlRvYWxsYTwvdGV4dD48L3N2Zz4=",
-            sizes: ["Pequeña", "Mediana", "Grande"]
-        },
-        {
-            id: 13,
-            categoryId: 3,
-            name: "Bandas de Resistencia",
-            description: "Set de 5 bandas con diferentes niveles de resistencia",
-            price: 18.99,
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkJhbmRhczwvdGV4dD48L3N2Zz4=",
-            sizes: ["Set básico", "Set completo"]
-        },
-        {
-            id: 14,
-            categoryId: 3,
-            name: "Guantes de Gimnasio",
-            description: "Protección para las manos al levantar pesas",
-            price: 16.99,
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkd1YW50ZXM8L3RleHQ+PC9zdmc+",
-            sizes: ["S", "M", "L", "XL"]
-        },
-        {
-            id: 15,
-            categoryId: 3,
-            name: "Cinta para Sudor",
-            description: "Cinta absorbente para la frente durante el ejercicio",
-            price: 8.99,
-            image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkNpbnRhPC90ZXh0Pjwvc3ZnPg==",
-            sizes: ["Única"]
-        }
-    ],
     testimonials: [
         {
             name: "María González",
@@ -185,44 +25,213 @@ const appData = {
     gallery: [
         {
             id: 1,
-            src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SW1hZ2VuIGRlIGxhIHpvbmEgZGUgY2FyZGlvIChSZW1wbGF6YXIgcG9yIGltYWdlbiByZWFsKTwvdGV4dD48L3N2Zz4=",
+            src: "./assets/1.jpg",
             alt: "Zona de cardio"
         },
         {
             id: 2,
-            src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SW1hZ2VuIGRlIGxhIHpvbmEgZGUgcGVzYXMgKFJlbXBsYXphciBwb3IgaW1hZ2VuIHJlYWwpPC90ZXh0Pjwvc3ZnPg==",
-            alt: "Zona de pesas"
+            src: "./assets/2.jpg",
+            alt: "Zona de cintas"
         },
         {
             id: 3,
-            src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SW1hZ2VuIGRlIGNsYXNlIGRlIHlvZ2EgKFJlbXBsYXphciBwb3IgaW1hZ2VuIHJlYWwpPC90ZXh0Pjwvc3ZnPg==",
-            alt: "Clase de yoga"
+            src: "./assets/3.webp",
+            alt: "Lugar amplio"
         },
         {
             id: 4,
-            src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SW1hZ2VuIGRlIGxhIHpvbmEgZGUgZXN0aXJhY2nDs24gKFJlbXBsYXphciBwb3IgaW1hZ2VuIHJlYWwpPC90ZXh0Pjwvc3ZnPg==",
-            alt: "Zona de estiramiento"
+            src: "./assets/4.jpg",
+            alt: "Zona de pesas"
         },
         {
             id: 5,
-            src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SW1hZ2VuIGRlIGxhIHpvbmEgZGUgZW50cmVuYW1pZW50byBwZXJzb25hbCAoUmVtcGxhemFyIHBvciBpbWFnZW4gcmVhbCk8L3RleHQ+PC9zdmc+",
-            alt: "Entrenamiento personal"
+            src: "./assets/5.jpg",
+            alt: "Maquinas nuevas"
         },
         {
             id: 6,
-            src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzc3Nzc3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+SW1hZ2VuIGRlbCB2ZXN0dWFyaW8gKFJlbXBsYXphciBwb3IgaW1hZ2VuIHJlYWwpPC90ZXh0Pjwvc3ZnPg==",
-            alt: "Vestuario"
+            src: "./assets/6.avif",
+            alt: "Horario nocturno"
+        },
+        {
+            id: 7,
+            src: "./assets/7.webp",
+            alt: "Zona yoga"
+        },
+        {
+            id: 8,
+            src: "./assets/8.jpg",
+            alt: "Horario matutino"
         }
     ]
 };
 
 // Estado de la aplicación
 let currentState = {
-    cart: [],
     favorites: [],
-    currentCategory: null,
     currentTestimonial: 0,
-    isDarkMode: false
+    isDarkMode: false,
+    currentLanguage: 'es',
+    subscriptionPlan: null,
+    subscriptionPrice: null
+};
+
+// Textos en diferentes idiomas
+const translations = {
+    es: {
+        // Navbar
+        inicio: "Inicio",
+        planes: "Planes",
+        testimonios: "Testimonios",
+        instalaciones: "Instalaciones",
+        contacto: "Contacto",
+        
+        // Hero
+        heroTitle: "Iron Flex",
+        heroSubtitle: "Transforma tu cuerpo, fortalece tu mente. El mejor gimnasio con equipos de última generación y entrenadores profesionales.",
+        heroButton: "Descubre nuestros planes",
+        
+        // Plans
+        plansTitle: "Nuestros Planes",
+        basicPlan: "Básico",
+        proPlan: "Pro",
+        premiumPlan: "Premium",
+        popularBadge: "Popular",
+        month: "mes",
+        subscribeButton: "Suscribirse",
+        
+        // Testimonials
+        testimonialsTitle: "Lo que dicen nuestros clientes",
+        
+        // Gallery
+        galleryTitle: "Nuestras Instalaciones",
+        
+        // Contact
+        contactTitle: "Contáctanos",
+        name: "Nombre",
+        email: "Email",
+        message: "Mensaje",
+        subscribePromotions: "Suscribirme a promociones y novedades",
+        sendMessage: "Enviar Mensaje",
+        
+        // Footer
+        projectBy: "Proyecto ficticio desarrollado por Thomas Ramírez - Desarrollador Web con más de 2 años de experiencia, especializado en Landing Pages Profesionales, SEO y Marketing Digital.",
+        demoPurpose: "Esta página fue creada con fines demostrativos, utilizando HTML, CSS y JavaScript puro. No pertenece a ninguna empresa real.",
+        orderLanding: "Si querés una landing igual de profesional, encargá la tuya por solo $10 USD en mi perfil de",
+        
+        // Subscription Modal
+        subscriptionTitle: "Suscribirse al Plan",
+        paymentNotice: "AVISO: Este es un formulario ficticio. No ingreses información real de tarjeta de crédito.",
+        fullName: "Nombre Completo",
+        phone: "Teléfono",
+        cardNumber: "Número de Tarjeta",
+        expiryDate: "Fecha de Expiración",
+        confirmSubscription: "Confirmar Suscripción",
+        
+        // BMI Calculator
+        bmiTitle: "Calculadora de IMC",
+        bmiDescription: "El Índice de Masa Corporal (IMC) es una medida que evalúa si tu peso es adecuado en relación con tu altura. Esta herramienta te ayuda a conocer tu estado nutricional, pero no sustituye el diagnóstico de un profesional.",
+        height: "Altura (cm)",
+        weight: "Peso (kg)",
+        age: "Edad",
+        gender: "Sexo",
+        male: "Masculino",
+        female: "Femenino",
+        other: "Otro",
+        calculateBMI: "Calcular IMC",
+        bmiValue: "Tu IMC es",
+        underweight: "Bajo peso",
+        normal: "Peso normal",
+        overweight: "Sobrepeso",
+        obesity1: "Obesidad Grado 1",
+        obesity2: "Obesidad Grado 2",
+        obesity3: "Obesidad Grado 3",
+        
+        // Map
+        gymName: "Iron Flex Gym",
+        gymAddress: "Av. Siempre Viva 742, Buenos Aires",
+        gymHours: "Horario: Lunes a Viernes 6:00-22:00",
+        
+        // WhatsApp Tooltip
+        whatsappTooltip: "¿Querés comprar una página como esta?"
+    },
+    en: {
+        // Navbar
+        inicio: "Home",
+        planes: "Plans",
+        testimonios: "Testimonials",
+        instalaciones: "Facilities",
+        contacto: "Contact",
+        
+        // Hero
+        heroTitle: "Iron Flex",
+        heroSubtitle: "Transform your body, strengthen your mind. The best gym with state-of-the-art equipment and professional trainers.",
+        heroButton: "Discover our plans",
+        
+        // Plans
+        plansTitle: "Our Plans",
+        basicPlan: "Basic",
+        proPlan: "Pro",
+        premiumPlan: "Premium",
+        popularBadge: "Popular",
+        month: "month",
+        subscribeButton: "Subscribe",
+        
+        // Testimonials
+        testimonialsTitle: "What our clients say",
+        
+        // Gallery
+        galleryTitle: "Our Facilities",
+        
+        // Contact
+        contactTitle: "Contact Us",
+        name: "Name",
+        email: "Email",
+        message: "Message",
+        subscribePromotions: "Subscribe to promotions and news",
+        sendMessage: "Send Message",
+        
+        // Footer
+        projectBy: "Fictional project developed by Thomas Ramírez - Web Developer with over 2 years of experience, specialized in Professional Landing Pages, SEO and Digital Marketing.",
+        demoPurpose: "This page was created for demonstration purposes, using pure HTML, CSS and JavaScript. It does not belong to any real company.",
+        orderLanding: "If you want a landing page just as professional, order yours for only $10 USD on my",
+        
+        // Subscription Modal
+        subscriptionTitle: "Subscribe to Plan",
+        paymentNotice: "NOTICE: This is a fictional form. Do not enter real credit card information.",
+        fullName: "Full Name",
+        phone: "Phone",
+        cardNumber: "Card Number",
+        expiryDate: "Expiry Date",
+        confirmSubscription: "Confirm Subscription",
+        
+        // BMI Calculator
+        bmiTitle: "BMI Calculator",
+        bmiDescription: "The Body Mass Index (BMI) is a measure that assesses whether your weight is appropriate for your height. This tool helps you know your nutritional status, but does not replace a professional diagnosis.",
+        height: "Height (cm)",
+        weight: "Weight (kg)",
+        age: "Age",
+        gender: "Gender",
+        male: "Male",
+        female: "Female",
+        other: "Other",
+        calculateBMI: "Calculate BMI",
+        bmiValue: "Your BMI is",
+        underweight: "Underweight",
+        normal: "Normal weight",
+        overweight: "Overweight",
+        obesity1: "Obesity Grade 1",
+        obesity2: "Obesity Grade 2",
+        obesity3: "Obesity Grade 3",
+        
+        // Map
+        gymName: "Iron Flex Gym",
+        gymAddress: "742 Evergreen Ave, Buenos Aires",
+        gymHours: "Hours: Monday to Friday 6:00-22:00",
+        
+        // WhatsApp Tooltip
+        whatsappTooltip: "Do you want to buy a page like this?"
+    }
 };
 
 // Inicialización cuando el DOM está listo
@@ -239,7 +248,6 @@ document.addEventListener('DOMContentLoaded', function() {
     loadFromLocalStorage();
 
     // Inicializar componentes
-    initCategories();
     initTestimonials();
     initGallery();
     initEventListeners();
@@ -251,13 +259,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Cargar datos del localStorage
 function loadFromLocalStorage() {
-    const savedCart = localStorage.getItem('ironFlexCart');
     const savedFavorites = localStorage.getItem('ironFlexFavorites');
     const savedTheme = localStorage.getItem('ironFlexTheme');
-
-    if (savedCart) {
-        currentState.cart = JSON.parse(savedCart);
-    }
+    const savedLanguage = localStorage.getItem('ironFlexLanguage');
 
     if (savedFavorites) {
         currentState.favorites = JSON.parse(savedFavorites);
@@ -266,230 +270,109 @@ function loadFromLocalStorage() {
     if (savedTheme === 'dark') {
         toggleDarkMode(true);
     }
+
+    if (savedLanguage) {
+        currentState.currentLanguage = savedLanguage;
+        updateLanguage();
+    }
 }
 
 // Guardar datos en localStorage
 function saveToLocalStorage() {
-    localStorage.setItem('ironFlexCart', JSON.stringify(currentState.cart));
     localStorage.setItem('ironFlexFavorites', JSON.stringify(currentState.favorites));
     localStorage.setItem('ironFlexTheme', currentState.isDarkMode ? 'dark' : 'light');
+    localStorage.setItem('ironFlexLanguage', currentState.currentLanguage);
 }
 
-// Inicializar categorías
-function initCategories() {
-    const categoriesContainer = document.querySelector('.categories');
-    
-    appData.categories.forEach(category => {
-        const categoryCard = document.createElement('div');
-        categoryCard.className = 'category-card fade-in';
-        categoryCard.innerHTML = `
-            <div class="category-img">
-                <img src="${category.image}" alt="${category.name}" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="category-content">
-                <h3>${category.name}</h3>
-                <p>${category.description}</p>
-                <button class="btn btn-primary" onclick="showProducts(${category.id})">Ver Productos</button>
-            </div>
-        `;
-        categoriesContainer.appendChild(categoryCard);
-    });
+// Cambiar idioma
+function toggleLanguage() {
+    currentState.currentLanguage = currentState.currentLanguage === 'es' ? 'en' : 'es';
+    updateLanguage();
+    saveToLocalStorage();
 }
 
-// Mostrar productos de una categoría
-function showProducts(categoryId) {
-    const category = appData.categories.find(cat => cat.id === categoryId);
-    const products = appData.products.filter(product => product.categoryId === categoryId);
+// Actualizar textos según idioma
+function updateLanguage() {
+    const lang = currentState.currentLanguage;
+    const t = translations[lang];
     
-    document.getElementById('products-title').textContent = `Productos - ${category.name}`;
+    // Actualizar botón de idioma
+    document.getElementById('language-toggle').textContent = lang === 'es' ? 'EN' : 'ES';
     
-    const productsGrid = document.querySelector('.products-grid');
-    productsGrid.innerHTML = '';
+    // Actualizar navegación
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks[0].textContent = t.inicio;
+    navLinks[1].textContent = t.planes;
+    navLinks[2].textContent = t.testimonios;
+    navLinks[3].textContent = t.instalaciones;
+    navLinks[4].textContent = t.contacto;
     
-    products.forEach(product => {
-        const productCard = document.createElement('div');
-        productCard.className = 'product-card fade-in';
-        productCard.innerHTML = `
-            <div class="product-img">
-                <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="product-content">
-                <h3>${product.name}</h3>
-                <p>${product.description}</p>
-                <div class="product-price">$${product.price}</div>
-                <div class="product-actions">
-                    <button class="btn btn-primary" onclick="openProductModal(${product.id})">Ver Detalles</button>
-                </div>
-            </div>
-        `;
-        productsGrid.appendChild(productCard);
+    // Actualizar hero
+    document.querySelector('.hero h1').textContent = t.heroTitle;
+    document.querySelector('.hero p').textContent = t.heroSubtitle;
+    document.querySelector('.cta-button').textContent = t.heroButton;
+    
+    // Actualizar planes
+    document.querySelector('#plans-section .section-title').textContent = t.plansTitle;
+    const planCards = document.querySelectorAll('.plan-card');
+    planCards[0].querySelector('h3').textContent = t.basicPlan;
+    planCards[1].querySelector('h3').textContent = t.proPlan;
+    planCards[2].querySelector('h3').textContent = t.premiumPlan;
+    planCards[1].querySelector('.popular-badge').textContent = t.popularBadge;
+    
+    const subscribeButtons = document.querySelectorAll('.plan-card .btn');
+    subscribeButtons.forEach(button => {
+        button.textContent = t.subscribeButton;
     });
     
-    document.getElementById('categories-section').style.display = 'none';
-    document.getElementById('products-section').style.display = 'block';
+    // Actualizar testimonios
+    document.querySelector('#testimonials-section .section-title').textContent = t.testimonialsTitle;
     
-    currentState.currentCategory = categoryId;
+    // Actualizar galería
+    document.querySelector('#gallery-section .section-title').textContent = t.galleryTitle;
     
-    // Scroll suave a la sección de productos
-    scrollToSection('products-section');
-}
-
-// Volver a categorías
-function goBackToCategories() {
-    document.getElementById('products-section').style.display = 'none';
-    document.getElementById('categories-section').style.display = 'block';
-    scrollToSection('categories-section');
-}
-
-// Abrir modal de producto
-function openProductModal(productId) {
-    const product = appData.products.find(p => p.id === productId);
-    if (!product) return;
+    // Actualizar contacto
+    document.querySelector('#contact-section .section-title').textContent = t.contactTitle;
+    document.querySelector('label[for="name"]').textContent = t.name;
+    document.querySelector('label[for="email"]').textContent = t.email;
+    document.querySelector('label[for="message"]').textContent = t.message;
+    document.querySelector('label[for="subscribe"]').textContent = t.subscribePromotions;
+    document.querySelector('#contact-section .btn').textContent = t.sendMessage;
     
-    document.getElementById('product-modal-title').textContent = product.name;
+    // Actualizar mapa
+    const mapPlaceholder = document.querySelector('.map-placeholder div');
+    mapPlaceholder.querySelector('h3').textContent = t.gymName;
+    mapPlaceholder.querySelector('p:nth-child(2)').textContent = t.gymAddress;
+    mapPlaceholder.querySelector('p:nth-child(3)').textContent = t.gymHours;
     
-    const modalContent = document.getElementById('product-modal-content');
-    modalContent.innerHTML = `
-        <div style="display: flex; flex-direction: column; gap: 1rem;">
-            <div class="product-img" style="height: 250px;">
-                <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <p>${product.description}</p>
-            <div class="product-price" style="font-size: 1.5rem;">$${product.price}</div>
-            
-            ${product.sizes ? `
-            <div class="form-group">
-                <label for="product-size">Talle:</label>
-                <select id="product-size" class="form-control">
-                    ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join('')}
-                </select>
-            </div>
-            ` : ''}
-            
-            <div class="form-group">
-                <label for="product-quantity">Cantidad:</label>
-                <input type="number" id="product-quantity" class="form-control" value="1" min="1">
-            </div>
-            
-            <button class="btn btn-primary" onclick="addToCart(${product.id})" style="width: 100%;">Agregar al Carrito</button>
-        </div>
+    // Actualizar calculadora de IMC
+    const bmiSection = document.querySelector('.bmi-section');
+    bmiSection.querySelector('.bmi-title').textContent = t.bmiTitle;
+    bmiSection.querySelector('.bmi-description').textContent = t.bmiDescription;
+    bmiSection.querySelector('label[for="height"]').textContent = t.height;
+    bmiSection.querySelector('label[for="weight"]').textContent = t.weight;
+    bmiSection.querySelector('label[for="age"]').textContent = t.age;
+    bmiSection.querySelector('label[for="gender"]').textContent = t.gender;
+    
+    const genderSelect = document.getElementById('gender');
+    genderSelect.innerHTML = `
+        <option value="">${t.gender}</option>
+        <option value="male">${t.male}</option>
+        <option value="female">${t.female}</option>
+        <option value="other">${t.other}</option>
     `;
     
-    openModal('product-modal');
-}
-
-// Agregar producto al carrito
-function addToCart(productId) {
-    const product = appData.products.find(p => p.id === productId);
-    if (!product) return;
+    bmiSection.querySelector('.btn').textContent = t.calculateBMI;
     
-    const sizeSelect = document.getElementById('product-size');
-    const quantityInput = document.getElementById('product-quantity');
+    // Actualizar footer
+    const disclaimer = document.querySelector('.disclaimer');
+    disclaimer.querySelector('p:nth-child(1)').textContent = t.projectBy;
+    disclaimer.querySelector('p:nth-child(2)').textContent = t.demoPurpose;
+    const lastParagraph = disclaimer.querySelector('p:nth-child(3)');
+    lastParagraph.innerHTML = `${t.orderLanding} <a href="https://www.fiverr.com/tu_usuario">fiverr</a>.`;
     
-    const size = sizeSelect ? sizeSelect.value : 'Única';
-    const quantity = parseInt(quantityInput.value) || 1;
-    
-    // Verificar si el producto ya está en el carrito
-    const existingItemIndex = currentState.cart.findIndex(item => 
-        item.productId === productId && item.size === size
-    );
-    
-    if (existingItemIndex !== -1) {
-        // Actualizar cantidad si ya existe
-        currentState.cart[existingItemIndex].quantity += quantity;
-    } else {
-        // Agregar nuevo item al carrito
-        currentState.cart.push({
-            productId,
-            name: product.name,
-            price: product.price,
-            size,
-            quantity,
-            image: product.image
-        });
-    }
-    
-    saveToLocalStorage();
-    closeModal('product-modal');
-    showToast('Producto agregado al carrito');
-}
-
-// Abrir modal del carrito
-function openCart() {
-    const cartItems = document.getElementById('cart-items');
-    cartItems.innerHTML = '';
-    
-    if (currentState.cart.length === 0) {
-        cartItems.innerHTML = '<p style="text-align: center;">Tu carrito está vacío</p>';
-        document.getElementById('cart-total').textContent = 'Total: $0';
-    } else {
-        let total = 0;
-        
-        currentState.cart.forEach((item, index) => {
-            const itemTotal = item.price * item.quantity;
-            total += itemTotal;
-            
-            const cartItem = document.createElement('div');
-            cartItem.className = 'cart-item';
-            cartItem.innerHTML = `
-                <div class="cart-item-info">
-                    <h4>${item.name}</h4>
-                    <p>Talle: ${item.size} | Cantidad: ${item.quantity}</p>
-                    <p>$${item.price} x ${item.quantity} = $${itemTotal.toFixed(2)}</p>
-                </div>
-                <div class="cart-item-actions">
-                    <div class="quantity-control">
-                        <button class="quantity-btn" onclick="updateCartItemQuantity(${index}, ${item.quantity - 1})">-</button>
-                        <span>${item.quantity}</span>
-                        <button class="quantity-btn" onclick="updateCartItemQuantity(${index}, ${item.quantity + 1})">+</button>
-                    </div>
-                    <button class="remove-btn" onclick="removeFromCart(${index})">Eliminar</button>
-                </div>
-            `;
-            cartItems.appendChild(cartItem);
-        });
-        
-        document.getElementById('cart-total').textContent = `Total: $${total.toFixed(2)}`;
-    }
-    
-    openModal('cart-modal');
-}
-
-// Actualizar cantidad de un item en el carrito
-function updateCartItemQuantity(index, newQuantity) {
-    if (newQuantity < 1) {
-        removeFromCart(index);
-        return;
-    }
-    
-    currentState.cart[index].quantity = newQuantity;
-    saveToLocalStorage();
-    openCart(); // Recargar el carrito para mostrar los cambios
-}
-
-// Eliminar item del carrito
-function removeFromCart(index) {
-    currentState.cart.splice(index, 1);
-    saveToLocalStorage();
-    openCart(); // Recargar el carrito para mostrar los cambios
-    showToast('Producto eliminado del carrito');
-}
-
-// Finalizar compra
-function checkout() {
-    if (currentState.cart.length === 0) {
-        showToast('Tu carrito está vacío');
-        return;
-    }
-    
-    // Simular proceso de compra
-    showConfirmation('¡Compra exitosa!', 'Tu pedido ha sido procesado correctamente. Recibirás un correo de confirmación.');
-    
-    // Limpiar carrito
-    currentState.cart = [];
-    saveToLocalStorage();
-    
-    closeModal('cart-modal');
+    // Actualizar tooltip de WhatsApp
+    document.getElementById('whatsapp-float').setAttribute('data-tooltip', t.whatsappTooltip);
 }
 
 // Inicializar testimonios
@@ -650,12 +533,136 @@ function shareImage(imageIndex) {
     }
 }
 
-// Suscribirse a un plan
-function subscribeToPlan(planName) {
+// Abrir modal de suscripción
+function openSubscriptionModal(plan, price) {
+    currentState.subscriptionPlan = plan;
+    currentState.subscriptionPrice = price;
+    
+    const t = translations[currentState.currentLanguage];
+    document.getElementById('subscription-modal-title').textContent = `${t.subscriptionTitle} ${plan}`;
+    
+    // Actualizar textos del formulario
+    document.querySelector('label[for="sub-name"]').textContent = t.fullName;
+    document.querySelector('label[for="sub-email"]').textContent = t.email;
+    document.querySelector('label[for="sub-phone"]').textContent = t.phone;
+    document.querySelector('label[for="sub-card"]').textContent = t.cardNumber;
+    document.querySelector('label[for="sub-expiry"]').textContent = t.expiryDate;
+    document.querySelector('.subscription-form .btn').textContent = t.confirmSubscription;
+    
+    openModal('subscription-modal');
+}
+
+// Procesar suscripción
+function processSubscription() {
+    const name = document.getElementById('sub-name').value;
+    const email = document.getElementById('sub-email').value;
+    const phone = document.getElementById('sub-phone').value;
+    
+    // Validaciones básicas
+    if (!name || !email || !phone) {
+        showToast('Por favor, completa todos los campos obligatorios');
+        return;
+    }
+    
+    if (!isValidEmail(email)) {
+        showToast('Por favor, ingresa un email válido');
+        return;
+    }
+    
+    // Simular procesamiento de suscripción
+    const t = translations[currentState.currentLanguage];
     showConfirmation(
         '¡Suscripción exitosa!', 
-        `Te has suscrito al plan ${planName}. Recibirás un correo con los detalles de tu membresía.`
+        `Te has suscrito al plan ${currentState.subscriptionPlan} por $${currentState.subscriptionPrice}/mes. Recibirás un correo con los detalles de tu membresía.`
     );
+    
+    // Limpiar formulario
+    document.getElementById('sub-name').value = '';
+    document.getElementById('sub-email').value = '';
+    document.getElementById('sub-phone').value = '';
+    document.getElementById('sub-card').value = '';
+    document.getElementById('sub-expiry').value = '';
+    document.getElementById('sub-cvv').value = '';
+    
+    closeModal('subscription-modal');
+}
+
+// Calcular IMC
+function calculateBMI() {
+    const heightInput = document.getElementById('height');
+    const weightInput = document.getElementById('weight');
+    const ageInput = document.getElementById('age');
+    const genderInput = document.getElementById('gender');
+    
+    const height = parseFloat(heightInput.value);
+    const weight = parseFloat(weightInput.value);
+    const age = parseInt(ageInput.value);
+    const gender = genderInput.value;
+    
+    // Validaciones
+    if (!height || height < 50 || height > 250) {
+        showToast('Por favor, ingresa una altura válida entre 50cm y 250cm');
+        heightInput.focus();
+        return;
+    }
+    
+    if (!weight || weight < 10 || weight > 300) {
+        showToast('Por favor, ingresa un peso válido entre 10kg y 300kg');
+        weightInput.focus();
+        return;
+    }
+    
+    if (!age || age < 5 || age > 120) {
+        showToast('Por favor, ingresa una edad válida entre 5 y 120 años');
+        ageInput.focus();
+        return;
+    }
+    
+    if (!gender) {
+        showToast('Por favor, selecciona tu sexo');
+        genderInput.focus();
+        return;
+    }
+    
+    // Convertir altura a metros
+    const heightInMeters = height / 100;
+    
+    // Calcular IMC
+    const bmi = weight / (heightInMeters * heightInMeters);
+    const roundedBMI = bmi.toFixed(1);
+    
+    // Determinar categoría
+    let category, description;
+    const t = translations[currentState.currentLanguage];
+    
+    if (bmi < 18.5) {
+        category = t.underweight;
+        description = "Tu índice de masa corporal indica bajo peso. Consulta con un profesional de la salud para evaluar tu estado nutricional.";
+    } else if (bmi < 25) {
+        category = t.normal;
+        description = "Tu índice de masa corporal se encuentra dentro del rango considerado saludable. Mantén un estilo de vida activo y una alimentación balanceada.";
+    } else if (bmi < 30) {
+        category = t.overweight;
+        description = "Tu índice de masa corporal indica sobrepeso. Considera aumentar tu actividad física y mejorar tus hábitos alimenticios.";
+    } else if (bmi < 35) {
+        category = t.obesity1;
+        description = "Tu índice de masa corporal indica obesidad grado 1. Te recomendamos consultar con un profesional de la salud para un plan personalizado.";
+    } else if (bmi < 40) {
+        category = t.obesity2;
+        description = "Tu índice de masa corporal indica obesidad grado 2. Es importante buscar asesoramiento profesional para mejorar tu salud.";
+    } else {
+        category = t.obesity3;
+        description = "Tu índice de masa corporal indica obesidad grado 3. Te recomendamos buscar atención médica especializada para tu caso.";
+    }
+    
+    // Mostrar resultado
+    document.getElementById('bmi-value').textContent = `${t.bmiValue} ${roundedBMI}`;
+    document.getElementById('bmi-category').textContent = category;
+    document.getElementById('bmi-description').textContent = description;
+    document.getElementById('bmi-result').classList.add('show');
+    
+    // Scroll al resultado
+    document.getElementById('bmi-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 // Enviar formulario de contacto
@@ -779,10 +786,30 @@ function initEventListeners() {
         toggleDarkMode();
     });
     
+    // Toggle del idioma
+    document.getElementById('language-toggle').addEventListener('click', function() {
+        toggleLanguage();
+    });
+    
     // Botón de WhatsApp
     document.getElementById('whatsapp-float').addEventListener('click', function() {
         const message = encodeURIComponent('Hola, vengo de tu landing page y me gustaria contratar tu servicio de Fiverr por $10');
         window.open(`https://wa.me/5491173619142?text=${message}`, '_blank');
+    });
+    
+    // Botón subir
+    document.getElementById('scroll-to-top').addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // Mostrar/ocultar botón subir al hacer scroll
+    window.addEventListener('scroll', function() {
+        const scrollButton = document.getElementById('scroll-to-top');
+        if (window.scrollY > 500) {
+            scrollButton.classList.add('visible');
+        } else {
+            scrollButton.classList.remove('visible');
+        }
     });
     
     // Tooltip global
@@ -798,14 +825,6 @@ function initEventListeners() {
             tooltip.style.top = e.pageY + 10 + 'px';
         } else {
             tooltip.classList.remove('show');
-        }
-        
-        // Tooltip especial para el botón de WhatsApp
-        if (target.closest('#whatsapp-float')) {
-            tooltip.textContent = 'Queres comprar una pagina como esta?';
-            tooltip.classList.add('show');
-            tooltip.style.left = e.pageX + 10 + 'px';
-            tooltip.style.top = e.pageY - 40 + 'px';
         }
     });
     

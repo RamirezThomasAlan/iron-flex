@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iron Flex - Tu Gimnasio de Confianza</title>
+    <title>Iron Flex - Transforma Tu Cuerpo</title>
+    <link rel="icon" type="image/png" href="./assets/logo-redondo.png">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <!-- Pantalla de carga -->
     <div id="loading-screen">
-        <div class="loading-text">Cargando (Iron Flex), por favor espere...</div>
+        <div class="loading-text">Cargando Iron Flex, por favor espere...</div>
         <div class="loading-animation"></div>
     </div>
 
@@ -20,14 +21,19 @@
     <header>
         <nav class="navbar">
             <div class="logo" onclick="scrollToSection('hero')">
-                IF
+                <img src="./assets/logo.png" alt="Logo">
             </div>
             <ul class="nav-links">
                 <li><a href="#inicio" onclick="scrollToSection('hero')">Inicio</a></li>
-                <li><a href="#categorias" onclick="scrollToSection('categories-section')">Categorias</a></li>
+                <li><a href="#planes" onclick="scrollToSection('plans-section')">Planes</a></li>
                 <li><a href="#testimonios" onclick="scrollToSection('testimonials-section')">Testimonios</a></li>
+                <li><a href="#instalaciones" onclick="scrollToSection('gallery-section')">Instalaciones</a></li>
+                <li><a href="#contacto" onclick="scrollToSection('contact-section')">Contacto</a></li>
             </ul>
-            <button class="theme-toggle" id="theme-toggle">🌙</button>
+            <div class="header-controls">
+                <button class="theme-toggle" id="theme-toggle">🌙</button>
+                <button class="language-toggle" id="language-toggle">EN</button>
+            </div>
             <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
         </nav>
     </header>
@@ -37,26 +43,7 @@
         <div class="hero-content">
             <h1>Iron Flex</h1>
             <p>Transforma tu cuerpo, fortalece tu mente. El mejor gimnasio con equipos de última generación y entrenadores profesionales.</p>
-            <a href="#categorias" class="cta-button" onclick="scrollToSection('categories-section')">Descubre nuestros planes</a>
-        </div>
-    </section>
-
-    <!-- Categorías -->
-    <section id="categories-section" class="fade-in">
-        <h2 class="section-title">Nuestras Categorías</h2>
-        <div class="categories">
-            <!-- Las categorías se cargarán dinámicamente con JavaScript -->
-        </div>
-    </section>
-
-    <!-- Productos -->
-    <section id="products-section" class="fade-in" style="display: none;">
-        <h2 class="section-title" id="products-title">Productos</h2>
-        <div class="products-grid">
-            <!-- Los productos se cargarán dinámicamente con JavaScript -->
-        </div>
-        <div style="text-align: center; margin-top: 2rem;">
-            <button class="btn btn-primary" onclick="goBackToCategories()">Volver a Categorías</button>
+            <button class="cta-button" onclick="scrollToSection('plans-section')">Descubre nuestros planes</button>
         </div>
     </section>
 
@@ -66,31 +53,33 @@
         <div class="plans">
             <div class="plan-card">
                 <h3>Básico</h3>
-                <div class="plan-price">$29/mes</div>
+                <div class="plan-price">29<span class="plan-period">/mes</span></div>
                 <ul class="plan-features">
                     <li>Acceso a zona de cardio</li>
                     <li>Acceso a zona de pesas</li>
                     <li>Vestuario y duchas</li>
                     <li>Asesoramiento básico</li>
+                    <li>App móvil incluida</li>
                 </ul>
-                <button class="btn btn-primary" onclick="subscribeToPlan('Básico')">Suscribirse</button>
+                <button class="btn btn-primary" onclick="openSubscriptionModal('Básico', 29)">Suscribirse</button>
             </div>
             <div class="plan-card popular">
                 <div class="popular-badge">Popular</div>
                 <h3>Pro</h3>
-                <div class="plan-price">$49/mes</div>
+                <div class="plan-price">49<span class="plan-period">/mes</span></div>
                 <ul class="plan-features">
                     <li>Todos los beneficios del plan Básico</li>
                     <li>Acceso ilimitado a clases grupales</li>
                     <li>Plan de entrenamiento personalizado</li>
                     <li>Seguimiento nutricional básico</li>
                     <li>Acceso a área de spa</li>
+                    <li>1 sesión de evaluación mensual</li>
                 </ul>
-                <button class="btn btn-primary" onclick="subscribeToPlan('Pro')">Suscribirse</button>
+                <button class="btn btn-primary" onclick="openSubscriptionModal('Pro', 49)">Suscribirse</button>
             </div>
             <div class="plan-card">
                 <h3>Premium</h3>
-                <div class="plan-price">$79/mes</div>
+                <div class="plan-price">79<span class="plan-period">/mes</span></div>
                 <ul class="plan-features">
                     <li>Todos los beneficios del plan Pro</li>
                     <li>Entrenador personal 2 veces por semana</li>
@@ -98,8 +87,98 @@
                     <li>Acceso prioritario a todas las instalaciones</li>
                     <li>Invitado gratis 1 vez al mes</li>
                     <li>Descuentos en productos</li>
+                    <li>Acceso 24/7</li>
                 </ul>
-                <button class="btn btn-primary" onclick="subscribeToPlan('Premium')">Suscribirse</button>
+                <button class="btn btn-primary" onclick="openSubscriptionModal('Premium', 79)">Suscribirse</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculadora de IMC -->
+    <section class="fade-in">
+        <div class="bmi-section">
+            <h2 class="bmi-title">Calculadora de IMC</h2>
+            <p class="bmi-description">
+                El Índice de Masa Corporal (IMC) es una medida que evalúa si tu peso es adecuado en relación con tu altura. 
+                Esta herramienta te ayuda a conocer tu estado nutricional, pero no sustituye el diagnóstico de un profesional.
+            </p>
+            
+            <form id="bmi-form" class="bmi-form">
+                <div class="form-group">
+                    <label for="height">Altura (cm)</label>
+                    <input type="number" id="height" class="form-control" min="50" max="250" placeholder="Ej: 170" required>
+                    <small class="form-hint">Rango: 50cm - 250cm</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="weight">Peso (kg)</label>
+                    <input type="number" id="weight" class="form-control" min="10" max="300" step="0.1" placeholder="Ej: 70.5" required>
+                    <small class="form-hint">Rango: 10kg - 300kg</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">Edad</label>
+                    <input type="number" id="age" class="form-control" min="5" max="120" placeholder="Ej: 30" required>
+                    <small class="form-hint">Rango: 5 - 120 años</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gender">Sexo</label>
+                    <select id="gender" class="form-control" required>
+                        <option value="">Seleccionar</option>
+                        <option value="male">Masculino</option>
+                        <option value="female">Femenino</option>
+                        <option value="other">Otro</option>
+                    </select>
+                </div>
+            </form>
+            
+            <div class="bmi-actions">
+                <button class="btn btn-primary" onclick="calculateBMI()">Calcular IMC</button>
+            </div>
+            
+            <div id="bmi-result" class="bmi-result">
+                <div class="bmi-value" id="bmi-value">23.4</div>
+                <div class="bmi-category" id="bmi-category">Peso Normal</div>
+                <div class="bmi-description-text" id="bmi-description">
+                    Tu índice de masa corporal se encuentra dentro del rango considerado saludable.
+                    Mantén un estilo de vida activo y una alimentación balanceada.
+                </div>
+                
+                <table class="bmi-table">
+                    <thead>
+                        <tr>
+                            <th>IMC</th>
+                            <th>Clasificación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Menos de 18.5</td>
+                            <td>Bajo peso</td>
+                        </tr>
+                        <tr>
+                            <td>18.5 - 24.9</td>
+                            <td>Normal</td>
+                        </tr>
+                        <tr>
+                            <td>25 - 29.9</td>
+                            <td>Sobrepeso</td>
+                        </tr>
+                        <tr>
+                            <td>30 - 34.9</td>
+                            <td>Obesidad Grado 1</td>
+                        </tr>
+                        <tr>
+                            <td>35 - 39.9</td>
+                            <td>Obesidad Grado 2</td>
+                        </tr>
+                        <tr>
+                            <td>40 o más</td>
+                            <td>Obesidad Grado 3</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -148,50 +227,106 @@
             </div>
             <button class="btn btn-primary" onclick="submitContactForm()">Enviar Mensaje</button>
         </div>
+        
+        <!-- Mapa -->
+        <div class="map-container">
+            <div class="map-placeholder">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.987637676406!2d-58.43040602463759!3d-34.57919557295539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5bccf5a37f5%3A0x2cc2b9a5fe9bdb39!2sPalermo%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0; border-radius: 12px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div>
+                    <h3>Iron Flex Gym</h3>
+                    <p>Av. Siempre Viva 742, Buenos Aires</p>
+                    <p>Horario: Lunes a Viernes 6:00-22:00</p>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="social-links">
-            <a href="#" class="social-link">f</a> <!-- Facebook -->
-            <a href="#" class="social-link">in</a> <!-- LinkedIn -->
-            <a href="#" class="social-link">r</a> <!-- Reddit -->
-            <a href="https://www.fiverr.com/tu_usuario" class="social-link">F</a> <!-- Fiverr -->
-            <a href="#" class="social-link">gh</a> <!-- GitHub -->
+            <a href="https://www.facebook.com/profile.php?id=61575025664166" class="social-link">
+                <img src="./assets/facebook-logo.png" alt="Facebook">
+            </a>
+            <a href="https://www.linkedin.com/in/thomas-alan-ramirez/" class="social-link">
+                <img src="./assets/linkedin-logo.jpg" alt="LinkedIn">
+            </a>
+            <a href="https://www.reddit.com/user/Late-Put-9295/" class="social-link">
+                <img src="./assets/reddit-logo.png" alt="Reddit">
+            </a>
+            <a href="https://es.fiverr.com/aramirezthomas" class="social-link">
+                <img src="./assets/fiverr-logo.png" alt="Fiverr">
+            </a>
+            <a href="https://github.com/RamirezThomasAlan" class="social-link">
+                <img src="./assets/git-hub-logo.png" alt="GitHub">
+            </a>
         </div>
         <div class="disclaimer">
-            <p>Proyecto ficticio desarrollado por Thomas Ramírez - Desarrollador Web con más de 2 años de experiencia, especializado en Landing Pages Profesionales.</p>
+            <p>Proyecto ficticio desarrollado por Thomas Ramírez - Desarrollador Web con más de 2 años de experiencia, especializado en Landing Pages Profesionales y SEO.</p>
             <p>Esta página fue creada con fines demostrativos, utilizando HTML, CSS y JavaScript puro. No pertenece a ninguna empresa real.</p>
-            <p>Si querés una landing igual de profesional, encargá la tuya por solo $10 USD en mi perfil de <a href="https://www.fiverr.com/tu_usuario">fiverr</a>.</p>
+            <p>Si querés una landing igual de profesional, encargá la tuya por solo $10 USD en mi perfil de <a href="https://es.fiverr.com/aramirezthomas">fiverr</a>.</p>
         </div>
     </footer>
 
     <!-- Botón WhatsApp flotante -->
-    <div class="whatsapp-float" id="whatsapp-float">
-        <div class="whatsapp-icon">💬</div>
-    </div>
-
-    <!-- Modal de producto -->
-    <div class="modal" id="product-modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('product-modal')">×</button>
-            <h3 class="modal-title" id="product-modal-title">Producto</h3>
-            <div id="product-modal-content">
-                <!-- Contenido del producto se cargará dinámicamente -->
-            </div>
+    <div class="whatsapp-float" id="whatsapp-float" data-tooltip="¿Querés comprar una página como esta?">
+        <div class="whatsapp-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893-.001-3.189-1.262-6.187-3.55-8.444"/>
+            </svg>
         </div>
     </div>
 
-    <!-- Modal de carrito -->
-    <div class="modal" id="cart-modal">
+    <!-- Botón subir -->
+    <div class="scroll-to-top" id="scroll-to-top">
+        <i>↑</i>
+    </div>
+
+    <!-- Modal de suscripción -->
+    <div class="modal" id="subscription-modal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('cart-modal')">×</button>
-            <h3 class="modal-title">Tu Carrito</h3>
-            <div class="cart-items" id="cart-items">
-                <!-- Los elementos del carrito se cargarán dinámicamente -->
+            <button class="modal-close" onclick="closeModal('subscription-modal')">×</button>
+            <h3 class="modal-title" id="subscription-modal-title">Suscribirse al Plan</h3>
+            <div class="payment-notice">
+                <strong>AVISO:</strong> Este es un formulario ficticio. No ingreses información real de tarjeta de crédito.
             </div>
-            <div class="cart-total" id="cart-total">Total: $0</div>
-            <button class="btn btn-primary" style="width: 100%;" onclick="checkout()">Finalizar Compra</button>
+            <div class="subscription-form">
+                <div class="form-group">
+                    <label for="sub-name">Nombre Completo</label>
+                    <input type="text" id="sub-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="sub-email">Email</label>
+                    <input type="email" id="sub-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="sub-phone">Teléfono</label>
+                    <input type="tel" id="sub-phone" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="sub-card">Número de Tarjeta</label>
+                    <input type="text" id="sub-card" class="form-control" placeholder="XXXX XXXX XXXX XXXX" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="sub-expiry">Fecha de Expiración</label>
+                        <input type="text" id="sub-expiry" class="form-control" placeholder="MM/AA" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sub-cvv">CVV</label>
+                        <input type="text" id="sub-cvv" class="form-control" placeholder="XXX" required>
+                    </div>
+                </div>
+                <button class="btn btn-primary" style="width: 100%;" onclick="processSubscription()">Confirmar Suscripción</button>
+            </div>
         </div>
     </div>
 
